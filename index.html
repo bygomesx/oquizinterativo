@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Interativo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Quiz sobre HTML e CSS</h1>
+    </header>
+
+    <main>
+        
+        <section class="quiz">
+            
+        
+            <!-- Pergunta 1 -->
+            <article class="question">
+                <h2>1. O que significa HTML?</h2>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, true)">HyperText Markup Language</li>
+                    <li onclick="checkAnswer(this, false)">Hyperlink Text Machine Language</li>
+                    <li onclick="checkAnswer(this, false)">Home Tool Markup Language</li>
+                </ul>
+            </article>
+        
+            <!-- Pergunta 2 -->
+            <article class="question">
+                <h2>2. Qual tag é usada para criar um parágrafo?</h2>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false)">&lt;heading&gt;</li>
+                    <li onclick="checkAnswer(this, true)">&lt;p&gt;</li>
+                    <li onclick="checkAnswer(this, false)">&lt;div&gt;</li>
+                </ul>
+            </article>
+        
+            <!-- Pergunta 3 -->
+            <article class="question">
+                <h2>3. Qual é a tag correta para criar um link em HTML?</h2>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, true)">&lt;a href="..."&gt;</li>
+                    <li onclick="checkAnswer(this, false)">&lt;link&gt;</li>
+                    <li onclick="checkAnswer(this, false)">&lt;url&gt;</li>
+                </ul>
+            </article>
+       
+            <!-- Pergunta 4 -->
+            <article class="question">
+                <h2>4. Qual propriedade do CSS altera a cor de fundo de um elemento?</h2>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, true)">background-color</li>
+                    <li onclick="checkAnswer(this, false)">color</li>
+                    <li onclick="checkAnswer(this, false)">font-color</li>
+                </ul>
+            </article>
+        
+            <!-- Pergunta 5 -->
+            <article class="question">
+                <h2>5. Qual seletor CSS é usado para aplicar estilo a um ID?</h2>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false)">.</li>
+                    <li onclick="checkAnswer(this, true)">#</li>
+                    <li onclick="checkAnswer(this, false)">@</li>
+                </ul>
+            </article>
+        
+            <!-- Pergunta 6 -->
+            <article class="question">
+                <h2>6. Qual unidade de medida é relativa ao tamanho da fonte do elemento pai?</h2>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false)">px</li>
+                    <li onclick="checkAnswer(this, false)">%</li>
+                    <li onclick="checkAnswer(this, true)">em</li>
+                </ul>
+            </article>
+                
+        </section>
+       
+    </main>
+
+    <footer>
+        <p>Quiz desenvolvido como exemplo de HTML e CSS responsivo.</p>
+    </footer>
+
+    <script>
+        // Função para verificar a resposta
+        function checkAnswer(option, isCorrect) {
+            const optionsList = option.parentElement.children;
+            for (let i = 0; i < optionsList.length; i++) {
+                optionsList[i].classList.add(isCorrect && optionsList[i] === option ? 'correct' : 'wrong');
+                optionsList[i].onclick = null; // Desabilita cliques após escolher
+            }
+        }
+    </script>
+    
+</body>
+</html>
